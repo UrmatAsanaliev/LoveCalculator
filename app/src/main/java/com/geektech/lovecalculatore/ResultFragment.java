@@ -33,7 +33,11 @@ public class ResultFragment extends Fragment {
     private void initResult() {
         if (getArguments() != null){
             String model = getArguments().getString("key");
+            String fName = getArguments().getString("fname");
+            String sName = getArguments().getString("sname");
             binding.txtResult.setText(model);
+            binding.txtFname.setText(fName);
+            binding.txtSname.setText(sName);
         }
     }
 }

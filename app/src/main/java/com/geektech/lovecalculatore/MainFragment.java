@@ -24,6 +24,9 @@ public class MainFragment extends Fragment {
 
     private FragmentMainBinding binding;
     private NavHostController controller;
+    public static String KEY2 = "key";
+    public static String FNAME = "fname";
+    public static String SNAME = "sname";
     public static final String KEY = "fcf01ff652mshaec969ccd6aaceap1b5b91jsna3743dce8599";
     public static final String HOST = "love-calculator.p.rapidapi.com";
 
@@ -65,7 +68,9 @@ public class MainFragment extends Fragment {
                         if (response.isSuccessful()){
                             Bundle bundle = new Bundle();
                             assert response.body() != null;
-                            bundle.putString("key", response.body().percentage);
+                            bundle.putString(KEY2, response.body().percentage);
+                            bundle.putString(FNAME, response.body().firstName);
+                            bundle.putString(SNAME, response.body().secondName);
                             controller.navigate(R.id.resultFragment, bundle);
                         }
                     }
