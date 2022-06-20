@@ -1,4 +1,6 @@
-package com.geektech.lovecalculatore.network;
+package com.geektech.lovecalculatore.data.network;
+
+import com.geektech.lovecalculatore.data.entity.LoveModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

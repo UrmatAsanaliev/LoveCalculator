@@ -1,4 +1,4 @@
-package com.geektech.lovecalculatore.network;
+package com.geektech.lovecalculatore.data.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

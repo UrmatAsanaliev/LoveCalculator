@@ -2,8 +2,8 @@ package com.geektech.lovecalculatore;
 
 import android.app.Application;
 
-import com.geektech.lovecalculatore.network.LoveApi;
-import com.geektech.lovecalculatore.network.RetrofitService;
+import com.geektech.lovecalculatore.data.network.LoveApi;
+import com.geektech.lovecalculatore.data.network.RetrofitService;
 
 public class App extends Application {
 

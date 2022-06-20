@@ -8,12 +8,12 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.geektech.lovecalculatore.MainFragment"
+        android:name="com.geektech.lovecalculatore.ui.fragment.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/resultFragment"
-        android:name="com.geektech.lovecalculatore.ResultFragment"
+        android:name="com.geektech.lovecalculatore.ui.fragment.result.ResultFragment"
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" />
 </navigation>

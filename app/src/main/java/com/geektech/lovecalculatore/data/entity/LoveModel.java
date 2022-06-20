@@ -1,4 +1,4 @@
-package com.geektech.lovecalculatore.network;
+package com.geektech.lovecalculatore.data.entity;
 
 
 import com.google.gson.annotations.SerializedName;
