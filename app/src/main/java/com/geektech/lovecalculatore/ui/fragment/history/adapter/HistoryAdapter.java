@@ -3,6 +3,7 @@ package com.geektech.lovecalculatore.ui.fragment.history.adapter;
 import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -23,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ViewHolder> {
 
-    private List<HistoryModel> list = new ArrayList<>();
+    private final List<HistoryModel> list = new ArrayList<>();
 
     @SuppressLint("NotifyDataSetChanged")
     public void addItem(List<HistoryModel> list){
