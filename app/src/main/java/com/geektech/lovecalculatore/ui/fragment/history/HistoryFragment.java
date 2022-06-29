@@ -2,15 +2,12 @@ package com.geektech.lovecalculatore.ui.fragment.history;
 
 import android.annotation.SuppressLint;
 
-import androidx.lifecycle.ViewModelProvider;
-
 import com.geektech.lovecalculatore.R;
 import com.geektech.lovecalculatore.base.BaseFragment;
 import com.geektech.lovecalculatore.data.entity.historymodel.HistoryModel;
 import com.geektech.lovecalculatore.data.room.LoveDao;
 import com.geektech.lovecalculatore.databinding.FragmentHistoryBinding;
 import com.geektech.lovecalculatore.ui.fragment.history.adapter.HistoryAdapter;
-import com.geektech.lovecalculatore.ui.fragment.main.LoveViewModel;
 
 
 import javax.inject.Inject;
@@ -22,7 +19,6 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
 
     @Inject
     LoveDao loveDao;
-    LoveViewModel viewModel;
     private final HistoryAdapter adapter = new HistoryAdapter();
 
     @Override
@@ -32,8 +28,20 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
 
     @Override
     protected void setupUI() {
-        viewModel = new ViewModelProvider(requireActivity()).get(LoveViewModel.class);
+        initAdapter();
         initResult();
+        sortByAlphabet();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void sortByAlphabet() {
+        loveDao.getAllLovesByAlphabet();
+        adapter.notifyDataSetChanged();
+    }
+
+    private void initAdapter() {
+        adapter.addItem(loveDao.getAllLoves());
+        binding.rvList.setAdapter(adapter);
     }
 
     @Override
@@ -54,7 +62,11 @@ public class HistoryFragment extends BaseFragment<FragmentHistoryBinding> {
             String sname = getArguments().getString("s");
             loveDao.addLove(new HistoryModel(fname, sname, result));
             adapter.addItem(loveDao.getAllLoves());
-            binding.rvList.setAdapter(adapter);
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

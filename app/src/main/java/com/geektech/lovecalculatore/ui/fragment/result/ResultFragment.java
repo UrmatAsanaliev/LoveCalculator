@@ -52,4 +52,9 @@ public class ResultFragment extends BaseFragment<FragmentResultBinding> {
          });
        }
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 }

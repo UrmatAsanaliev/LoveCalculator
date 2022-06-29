@@ -82,6 +82,10 @@ public class MainFragment extends BaseFragment<FragmentMainBinding> {
                             .show();
             }
         });
+    }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 }

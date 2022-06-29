@@ -10,8 +10,6 @@ import com.geektech.lovecalculatore.data.entity.historymodel.HistoryModel;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
 @Dao
 public interface LoveDao {
 
@@ -21,8 +19,8 @@ public interface LoveDao {
     @Query("SELECT * FROM `historymodel` WHERE id IN (:id)")
     HistoryModel getCaseById(int id);
 
-    @Query("SELECT * FROM `historymodel` ORDER BY first_text ASC")
-    List<HistoryModel> getAllLovesByAlphabet();
+    @Query("SELECT * FROM `historymodel` ORDER BY firstName ASC")
+    void getAllLovesByAlphabet();
 
     @Insert
     void addLove(HistoryModel taskModel);

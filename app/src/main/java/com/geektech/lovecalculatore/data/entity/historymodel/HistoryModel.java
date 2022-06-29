@@ -10,11 +10,8 @@ public class HistoryModel {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-    @ColumnInfo(name = "first_text")
     private String firstName;
-    @ColumnInfo(name = "second_text")
     private String secondName;
-    @ColumnInfo(name = "result")
     private String result;
 
     @Ignore
